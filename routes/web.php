@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AboutVController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,14 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class,'index'])->name('home.index');
 
-Route::get('/about', function () {
-    return view('about');
-});
+Route::get('/about', [AboutVController::class,'index'])->name('about.index');
 
-Route::get('/news', function () {
-    return view('news');
-});
+Route::get('/news', [AboutVController::class,'index'])->name('news.index');
